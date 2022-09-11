@@ -1,22 +1,22 @@
 {
-  "name": "brick_pic",
+  "name": "brick-pic",
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://sigizmunde.github.io/brick_pic",
+  "homepage": "https://sigizmunde.github.io/brick-pic",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /brick_pic/"
+    "build": "parcel build src/*.html --public-url /brick-pic/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sigizmunde/brick_pic.git"
+    "url": "git+https://github.com/sigizmunde/brick-pic.git"
   },
   "keywords": [],
   "author": "Illya Bondar <illya.bondar.ukraine@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sigizmunde/brick_pic/issues"
+    "url": "https://github.com/sigizmunde/brick-pic/issues"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
