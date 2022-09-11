@@ -35,10 +35,16 @@ h6 {
 header {
   position: fixed;
   width: 100%;
+
+  background-color: var(--panel-color);
+}
+
+.header_container {
+  margin: 0 auto;
+  max-width: 1280px;
   display: flex;
   justify-content: space-between;
   padding: 25px;
-  background-color: var(--panel-color);
 }
 
 nav a {
@@ -55,12 +61,21 @@ nav a[active] {
 }
 
 main {
-  padding-top: 75px;
+  padding-top: 90px;
+  min-height: 100vh;
+  background-image: linear-gradient(#ffffffaa, #ffffffaa), url('./../images/brick_texture.png');
+
 }
 
 .container {
   padding: 25px;
+  margin: 0 auto;
+  width: calc(100% - 42px);
+  max-width: 1280px;
+  min-height: 80vh;
   text-align: center;
+  background-color: var(--back-color);
+  border-radius: 16px;
 }
 
 .controls {
@@ -73,6 +88,7 @@ main {
 #imageInput::-webkit-file-upload-button {
   visibility: hidden;
 }
+
 #imageInput::before {
   content: 'Select image';
   display: inline-block;
@@ -90,9 +106,11 @@ main {
   font-weight: 400;
   font-size: 12pt;
 }
+
 #imageInput:hover::before {
   border-color: black;
 }
+
 #imageInput:active::before {
   background: rgb(97, 158, 255);
 }
@@ -103,7 +121,7 @@ fieldset {
   padding: 12px;
 }
 
-fieldset > div:not(:last-child) {
+fieldset>div:not(:last-child) {
   margin-bottom: 8px;
 }
 
@@ -134,4 +152,29 @@ fieldset > div:not(:last-child) {
 canvas {
   max-width: 100%;
   margin: 25px 0;
+}
+
+/* ---------------- stats ---------------- */
+
+.stats_list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats_item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stats_sample {
+  background-image: url('./../images/brick_sample.png');
+  background-color: var(--color-sample);
+  background-position: center;
+  background-size: contain;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
 }

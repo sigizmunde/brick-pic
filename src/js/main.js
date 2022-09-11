@@ -7,6 +7,7 @@ import {
   mapDataToBricks,
   showBricks,
 } from './imageprocessor';
+import { showBrickStats } from './markupgenerator';
 
 const options = {
   size: 25,
@@ -79,4 +80,6 @@ function processImage(imageData) {
   const brickCanvas = document.querySelector('#brickCanvas');
   const bricks = mapDataToBricks(imageData);
   showBricks(bricks, brickCanvas);
+
+  showBrickStats(bricks, document.querySelector('#brickStats'));
 }

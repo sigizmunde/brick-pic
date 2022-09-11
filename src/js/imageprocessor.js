@@ -119,11 +119,11 @@ export function levels({ data }, mapArray = [63, 127, 191, 255]) {
 }
 
 const defaultMappingTemplate = [
-  { id: 0, border: 0 },
-  { id: 1, border: 47 },
-  { id: 2, border: 111 },
-  { id: 3, border: 175 },
-  { id: 4, border: 239 },
+  { id: 0, border: 0, color: '#000000' },
+  { id: 1, border: 47, color: '#2f2f2f' },
+  { id: 2, border: 111, color: '#6f6f6f' },
+  { id: 3, border: 175, color: '#afafaf' },
+  { id: 4, border: 239, color: '#efefef' },
 ];
 
 export function mapDataToBricks({ data, width }, mappingTemplate = defaultMappingTemplate) {
@@ -145,9 +145,7 @@ export function showBricks({ data, width, mapping }, canvas, brickSize = 16) {
   canvas.width = width * brickSize;
   canvas.height = (data.length / width) * brickSize;
   data.map((val, idx) => {
-    const grayColor = mapping.find(el => el.id === val)?.border || 0;
-    const channel = grayColor.toString(16).padStart(2, '0');
-    ctx.fillStyle = '#' + channel + channel + channel;
+    ctx.fillStyle = mapping.find(el => el.id === val)?.color || 0;
     const raw = idx % width;
     const column = Math.floor(idx / width);
     ctx.fillRect(raw * brickSize, column * brickSize, brickSize - 1, brickSize - 1);

@@ -10,14 +10,17 @@
   </head>
   <body>
     <header>
-      <nav>
-        <a href="./index.html" active>home</a><a href="./index.html">about</a
-        ><a href="./index.html">contacts</a>
-      </nav>
-      <div class="userauth">no user</div>
+      <div class="header_container">
+        <nav>
+          <a href="./index.html" active>home</a><a href="./index.html">about</a
+          ><a href="./index.html">contacts</a>
+        </nav>
+        <div class="userauth">no user</div>
+      </div>
     </header>
     <main>
       <div class="container">
+        <h1>Supa cool brick art bro</h1>
         <section style="margin-top: 42px">
           <div class="controls">
             <form><input type="file" accept="image/png, image/jpeg" id="imageInput" /></form>
@@ -62,6 +65,7 @@
           </div>
           <canvas id="myCanvas"></canvas>
           <canvas id="brickCanvas"></canvas>
+          <div id="brickStats"></div>
         </section>
 
         <script src="./js/main.js"></script>
