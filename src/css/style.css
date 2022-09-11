@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Rubik:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+
+  --regular-typeface: 'Rubik', sans-serif;
+  --accent-typeface: 'Noto Serif', serif;
+
+  --main-color: #111;
+  --secondary-color: #245;
+  --accent-color: rgb(19, 129, 255);
+  --back-color: #fff;
+  --panel-color: #f4eed8;
+}
+
+body {
+  font-family: var(--regular-typeface);
+  font-style: normal;
+  font-weight: 400;
+
+  color: var(--main-color);
+  background-color: var(--back-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--accent-typaface);
+  font-weight: 700;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  background-color: var(--panel-color);
+}
+
+nav a {
+  font-size: 16px;
+  text-decoration: none;
+  margin-right: 25px;
+  padding: 16px 0;
+  color: var(--secondary-color);
+}
+
+nav a[active] {
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+main {
+  padding-top: 75px;
+}
+
+.container {
+  padding: 25px;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+#imageInput::-webkit-file-upload-button {
+  visibility: hidden;
+}
+#imageInput::before {
+  content: 'Select image';
+  display: inline-block;
+  background: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+  color: var(--back-color);
+  /* text-shadow: 1px 1px var(--main-color); */
+  font-weight: 400;
+  font-size: 12pt;
+}
+#imageInput:hover::before {
+  border-color: black;
+}
+#imageInput:active::before {
+  background: rgb(97, 158, 255);
+}
+
+fieldset {
+  border-radius: 8px;
+  border: 1px solid var(--accent-color);
+  padding: 12px;
+}
+
+fieldset > div:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+#options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+#myCanvas {
+  display: none;
+  /* transform: scale(500%) translateY(50%); */
+  image-rendering: optimizeSpeed;
+  /* Older versions of FF          */
+  image-rendering: -moz-crisp-edges;
+  /* FF 6.0+                       */
+  image-rendering: -webkit-optimize-contrast;
+  /* Safari                        */
+  image-rendering: -o-crisp-edges;
+  /* OS X & Windows Opera (12.02+) */
+  image-rendering: pixelated;
+  /* Awesome future-browsers       */
+  -ms-interpolation-mode: nearest-neighbor;
+  /* IE                            */
+}
+
+canvas {
+  max-width: 100%;
+  margin: 25px 0;
+}

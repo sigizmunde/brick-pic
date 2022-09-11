@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+      integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>brick pic</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="./index.html" active>home</a><a href="./index.html">about</a
+        ><a href="./index.html">contacts</a>
+      </nav>
+      <div class="userauth">no user</div>
+    </header>
+    <main>
+      <div class="container">
+        <section style="margin-top: 42px">
+          <div class="controls">
+            <form><input type="file" accept="image/png, image/jpeg" id="imageInput" /></form>
+            <form id="options">
+              <fieldset>
+                <legend>Width</legend>
+                <div>
+                  <input type="radio" id="25" name="size" value="25" checked />
+                  <label for="25">25 bricks</label>
+                </div>
+                <div>
+                  <input type="radio" id="45" name="size" value="45" />
+                  <label for="45">45 bricks</label>
+                </div>
+                <div>
+                  <input type="radio" id="90" name="size" value="90" />
+                  <label for="90">90 bricks</label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Image</legend>
+                <div>
+                  <label for="brightness" class="parameter"
+                    >Brightness
+                    <input
+                      type="range"
+                      id="brightness"
+                      name="brightness"
+                      min="-5"
+                      max="5"
+                      value="0"
+                  /></label>
+                </div>
+                <div>
+                  <label for="contrast" class="parameter"
+                    >Contrast
+                    <input type="range" id="contrast" name="contrast" min="-1" max="5" value="0"
+                  /></label>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <canvas id="myCanvas"></canvas>
+          <canvas id="brickCanvas"></canvas>
+        </section>
+
+        <script src="./js/main.js"></script>
+      </div>
+    </main>
+  </body>
+</html>
