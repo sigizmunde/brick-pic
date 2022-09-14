@@ -62,9 +62,9 @@ nav a[active] {
 
 main {
   padding-top: 90px;
+  padding-bottom: 30px;
   min-height: 100vh;
   background-image: linear-gradient(#ffffffaa, #ffffffaa), url('./../images/brick_texture.png');
-
 }
 
 .container {
@@ -80,13 +80,19 @@ main {
 
 .controls {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 50px;
 }
 
+#imageInput {
+  max-width: 270px;
+}
+
 #imageInput::-webkit-file-upload-button {
   visibility: hidden;
+  width: 0;
 }
 
 #imageInput::before {
@@ -157,8 +163,10 @@ canvas {
 /* ---------------- stats ---------------- */
 
 .stats_list {
+  padding: 0 28px 0 20px;
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -174,6 +182,7 @@ canvas {
   background-color: var(--color-sample);
   background-position: center;
   background-size: contain;
+  background-repeat: repeat;
   width: 42px;
   height: 42px;
   border-radius: 50%;
