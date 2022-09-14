@@ -145,9 +145,48 @@ export function showBricks({ data, width, mapping }, canvas, brickSize = 16) {
   canvas.width = width * brickSize;
   canvas.height = (data.length / width) * brickSize;
   data.map((val, idx) => {
-    ctx.fillStyle = mapping.find(el => el.id === val)?.color || 0;
-    const raw = idx % width;
-    const column = Math.floor(idx / width);
-    ctx.fillRect(raw * brickSize, column * brickSize, brickSize - 1, brickSize - 1);
+    const color = mapping.find(el => el.id === val)?.color || 0;
+    const col = idx % width;
+    const row = Math.floor(idx / width);
+    drawBrick(col, row, brickSize, color, ctx);
   });
+}
+
+function drawBrick(x, y, size, color, context) {
+  context.fillStyle = color;
+
+  context.fillRect(x * size, y * size, size, size);
+  context.strokeStyle = '#00000022'; // shadow
+  context.beginPath();
+  context.arc(
+    (x + 0.5) * size,
+    (y + 0.5) * size,
+    size * 0.32 /* radius */,
+    -0.25 * Math.PI,
+    0.75 * Math.PI,
+  );
+  context.stroke();
+  context.strokeStyle = '#ffffff44'; // highlight
+  context.beginPath();
+  context.arc(
+    (x + 0.5) * size,
+    (y + 0.5) * size,
+    size * 0.32 /* radius */,
+    0.75 * Math.PI,
+    1.75 * Math.PI,
+  );
+  context.stroke();
+
+  context.strokeStyle = '#00000018'; // border shadow
+  context.beginPath();
+  context.moveTo((x + 1) * size, y * size);
+  context.lineTo((x + 1) * size, (y + 1) * size);
+  context.lineTo(x * size, (y + 1) * size);
+  context.stroke();
+  context.strokeStyle = '#ffffff18'; // border highlight
+  context.beginPath();
+  context.moveTo(x * size, (y + 1) * size);
+  context.lineTo(x * size, y * size);
+  context.lineTo((x + 1) * size, y * size);
+  context.stroke();
 }
